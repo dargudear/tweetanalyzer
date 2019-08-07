@@ -1,3 +1,13 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import re
+import sys
+import csv
+import pyttsx3
+import openpyxl
+import traceback
+from textblob import TextBlob
 class TweetAnalyzer():
     """
     Functionality for analyzing and categorizing content from tweets.

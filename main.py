@@ -1,4 +1,5 @@
-
+from tweetanalyzer import *
+from twitterConnector import *
 
 twitter_client = TwitterClient()
 tweet_analyzer = TweetAnalyzer()
@@ -102,7 +103,7 @@ for tweet in ntweets[:10]:
 trends1 = api.trends_place(1) # from the end of your code
 # trends1 is a list with only one element in it, which is a 
 # dict which we'll put in data.
-data = trends1[0] 
+'''data = trends1[0] 
 # grab the trends
 trends = data['trends']
 # grab the name from each trend
@@ -111,7 +112,7 @@ names = [trend['name'] for trend in trends]
 trendsName = ' '.join(names)
 print(trendsName)
 for a in names:
-    print(a)
+    print(a)'''
         
 
         
