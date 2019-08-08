@@ -6,7 +6,7 @@ tweet_analyzer = TweetAnalyzer()
 tweets_for_csv = []
 api = twitter_client.get_twitter_client_api()
 
-tweets = api.user_timeline(screen_name="narendramodi", count=100,tweet_mode="extended")
+tweets = api.user_timeline(screen_name="RajThackeray", count=10,tweet_mode="extended")
 lines=['ID','LEN','DATE','SOURCE','LIKES','RETWEETS']
 df = tweet_analyzer.tweets_to_data_frame(tweets)
 
