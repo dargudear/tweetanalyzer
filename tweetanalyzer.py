@@ -8,6 +8,8 @@ import pyttsx3
 import openpyxl
 import traceback
 from textblob import TextBlob
+from googletrans import Translator
+
 class TweetAnalyzer():
     """
     Functionality for analyzing and categorizing content from tweets.
@@ -49,7 +51,7 @@ class TweetAnalyzer():
             return 'negative'
 
     def get_tweets(self, tweets):
-        print(len(tweets))
+        #print(len(tweets))
         tmp=[]
         ''' 
         Main function to parse tweets. 
@@ -68,8 +70,10 @@ class TweetAnalyzer():
   
                 # saving text of tweet 
                 parsed_tweet['text'] = tweet 
-                # saving sentiment of tweet 
-                parsed_tweet['sentiment'] = self.get_tweet_sentiment(tweet.full_text)
+                # saving sentiment of tweet
+                translator = Translator(service_urls=['translate.google.com'])
+                translation = translator.translate(tweet.full_text,dest='en')
+                parsed_tweet['sentiment'] = self.get_tweet_sentiment(translation.text)
                 
   
                 # appending parsed tweet to tweets list 
